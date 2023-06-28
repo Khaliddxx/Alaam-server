@@ -2,9 +2,11 @@ const http = require("http");
 const mongoose = require("mongoose");
 const app = require("./app");
 const PORT = process.env.PORT || 5001;
+const dotenv = require("dotenv");
 
-const MONGO_URL =
-  "mongodb+srv://khalidah252:02rgf4d3c6s8XLu7@alaam.sqlz9vf.mongodb.net/?retryWrites=true&w=majority";
+dotenv.config();
+
+const MONGO_URL = process.env.MONGO_URL;
 
 const server = http.createServer(app);
 // const { io } = require("./utils/socket");
